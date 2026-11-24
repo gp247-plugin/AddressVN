@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Vietnam Address">
+  <rect width="96" height="96" rx="20" fill="#DA251D"/>
+  <path d="M48 82C48 82 22 55 22 40a26 26 0 0 1 52 0C74 55 48 82 48 82Z" fill="#FFFFFF"/>
+  <circle cx="48" cy="40" r="14" fill="#DA251D"/>
+  <path d="M48 29.5 50.6 36.4 57.99 36.76 52.2 41.36 54.17 48.49 48 44.4 41.83 48.49 43.8 41.36 38.01 36.76 45.4 36.4Z" fill="#FFCD00"/>
+</svg>

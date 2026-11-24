@@ -1,11 +1,11 @@
 {
     "name": "Vietnam Address",
-    "image": "images/logo.jpg",
+    "image": "images/address-vn.svg",
     "auth": "GP247",
     "email": "support@gp247.net",
     "link": "https://gp247.net",
     "configGroup": "Plugins",
-    "configCode": "AddressVN",
+    "configCode": "Other",
     "configKey": "AddressVN",
     "version": "1.0.0",
     "requireCore": ["3.18"],
