@@ -24,7 +24,8 @@ Danh mục dùng địa giới **hai cấp** (tỉnh → xã, từ 01/7/2025) do
 
 ## Tính năng
 
-- Ô **Tỉnh/Thành phố** và **Phường/Xã** thành danh sách chọn; danh sách phường/xã chỉ gồm đơn vị của tỉnh đã chọn.
+- Ô **Tỉnh/Thành phố** và **Phường/Xã** thành danh sách chọn có ô tìm: gõ không dấu ("ho chi minh", "tan") là lọc ra;
+  danh sách phường/xã chỉ gồm đơn vị của tỉnh đã chọn. Ô **Quốc gia** cũng tìm được như vậy.
 - Áp dụng ở mọi nơi nhập địa chỉ: đăng ký, thông tin tài khoản, sổ địa chỉ, bước đặt hàng; và ở màn quản trị: sửa đơn,
   tạo đơn, khách hàng, sổ địa chỉ của khách.
 - Lưu **tên chính thức** vào đơn hàng / địa chỉ (hiển thị, in hoá đơn, xuất dữ liệu vẫn như cũ) kèm **mã tỉnh, mã xã** để
@@ -35,6 +36,8 @@ Danh mục dùng địa giới **hai cấp** (tỉnh → xã, từ 01/7/2025) do
 - Khách ở nước khác vẫn gõ địa chỉ như thường. Danh mục lỗi hoặc thiếu thì ô chọn tự trở về ô nhập tay — khách vẫn đặt
   được hàng.
 - Bật/tắt theo từng cửa hàng (site nhiều cửa hàng).
+
+![Trang đăng ký của cửa hàng: Quốc gia Vietnam, Tỉnh/Thành phố là Thành phố Hồ Chí Minh, ô Phường/Xã đang gõ "tân" và danh sách lọc ra các phường/xã có chữ Tân](./images/address-vn-storefront_vi.png)
 
 ## Cài đặt
 
@@ -47,23 +50,23 @@ Plugin được bật ngay sau khi cài. Site chưa cập nhật lên `gp247/sho
 
 ## Cấu hình
 
-Bấm nút cài đặt của plugin (hoặc vào **Quản lý hệ thống → Cấu hình website → tab Địa chỉ**, chọn **Việt Nam**):
+Bấm nút cài đặt của plugin, hoặc vào **Thiết lập cửa hàng → Danh mục địa chỉ** (cũng có ở **Cấu hình website → tab Địa chỉ**),
+chọn **Việt Nam**. Màn chia ba bước:
 
-| Trường của cửa hàng | Lấy dữ liệu từ (mặc định) |
-| --- | --- |
-| Tỉnh/Thành phố (`city`) | Tỉnh/Thành phố |
-| Phường/Xã (`ward`) | Phường/Xã |
-| Các trường còn lại (số nhà, đường, quận/huyện cũ…) | Nhập tay |
+1. **Danh sách của plugin điền vào ô nào** — cột trái là danh sách plugin có (Tỉnh/Thành phố, Phường/Xã), cột phải là ô trên
+   form địa chỉ của khách nhận giá trị. Mặc định: Tỉnh/Thành phố → ô Tỉnh/Thành phố, Phường/Xã → ô Phường/Xã; các ô khác
+   (số nhà, đường, quận/huyện cũ…) vẫn gõ tay.
+2. **Khách sẽ thấy** — xem trước ô nào chọn từ danh sách, ô nào gõ tay.
+3. **Khi khách nhập địa chỉ không có trong danh sách** — *Yêu cầu khách chọn lại từ danh sách* (mặc định, khuyến nghị) hoặc
+   *Vẫn nhận địa chỉ, chỉ không có mã* (dùng khi giao diện cửa hàng chưa cập nhật khối địa chỉ mới).
 
-Mặc định đã dùng được ngay, chỉ cần hai việc:
+Khung kiểm tra ở đầu màn báo những gì còn thiếu, kèm nút mở đúng chỗ sửa. Việc thường gặp nhất: ở **Cấu hình website → tab
+Khách hàng**, **bật** ô Tỉnh/Thành phố và Phường/Xã (và ô Quốc gia nếu bạn bán cho nhiều nước), và **tắt** ô Quận/Huyện —
+Việt Nam bỏ cấp huyện từ 01/7/2025 (giữ ô này nếu bạn còn bán cho nước khác cần quận/huyện).
 
-1. Ở **tab Khách hàng** của cùng màn, **bật** hai trường Tỉnh/Thành phố và Phường/Xã (và trường Quốc gia nếu bạn bán cho
-   nhiều nước). Khung kiểm tra ở tab Địa chỉ báo ngay trường nào đang tắt, kèm nút mở đúng chỗ sửa.
-2. Tuỳ chọn **Bắt buộc khớp danh mục** (bật sẵn): địa chỉ Việt Nam không có trong danh mục bị từ chối và khách được yêu
-   cầu chọn lại. Tắt thì vẫn nhận địa chỉ đó, chỉ không có mã. Nên tắt nếu giao diện cửa hàng đang dùng chưa cập nhật khối
-   địa chỉ mới (khung kiểm tra ở tab Địa chỉ sẽ báo).
+![Màn Danh mục địa chỉ: menu Thiết lập cửa hàng mở tới mục Danh mục địa chỉ; nút Vietnam · Địa chỉ Việt Nam; khung kiểm tra báo đã đủ điều kiện; ba bước: danh sách điền vào ô nào, khách sẽ thấy, khi địa chỉ không có trong danh sách](./images/address-vn-admin-lists_vi.png)
 
-Gỡ plugin không xoá cấu hình ở tab Địa chỉ — cài lại là dùng tiếp.
+Gỡ plugin không xoá cấu hình ở màn này — cài lại là dùng tiếp.
 
 ## Cập nhật danh mục
 

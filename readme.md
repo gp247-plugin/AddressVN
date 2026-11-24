@@ -25,8 +25,8 @@ General Statistics Office, and ships inside the plugin.
 
 ## Features
 
-- The **Province / City** and **Ward / Commune** fields become lists; the ward list holds only the units of the chosen
-  province.
+- The **Province / City** and **Ward / Commune** fields become searchable lists: type without accents ("ho chi minh",
+  "tan") to filter; the ward list holds only the units of the chosen province. The **Country** field is searchable too.
 - Works everywhere an address is entered: registration, account details, address book, checkout; and in the admin: edit
   order, create order, customers, a customer's address book.
 - Stores the **official name** on the order / address (display, invoices and exports stay as they are) together with the
@@ -37,6 +37,8 @@ General Statistics Office, and ships inside the plugin.
 - Customers in other countries type their address as before. If the list is missing or fails, the lists fall back to
   typed fields — customers can still check out.
 - Enabled or disabled per store (multi-store sites).
+
+![Store registration page: Country Vietnam, Province / City Thành phố Hồ Chí Minh, the Ward / Commune field has "tân" typed and the list shows the matching wards](./images/address-vn-storefront_en.png)
 
 ## Installation
 
@@ -49,25 +51,24 @@ S-Cart first (`composer update`, then `php artisan gp247:update`).
 
 ## Configuration
 
-Click the plugin's settings button (or go to **System management → Website configuration → Address tab** and choose
-**Vietnam**):
+Click the plugin's settings button, or go to **Shop setting → Address lists** (also under **Website configuration → Address
+tab**) and choose **Vietnam**. The screen has three steps:
 
-| Shop field | Data from (default) |
-| --- | --- |
-| Province / City (`city`) | Province / City |
-| Ward / Commune (`ward`) | Ward / Commune |
-| Every other field (house number, street, former district…) | Typed by hand |
+1. **Which shop field each list of the plugin fills** — the left column is a list the plugin provides (Province / City,
+   Ward / Commune), the right column the field of the customer address form that receives it. Defaults: Province / City →
+   Province / City field, Ward / Commune → Ward field; every other field (house number, street, former district…) stays typed.
+2. **What customers will see** — a preview of which fields are picked from a list and which are typed.
+3. **When a customer enters an address that is not in the list** — *Ask the customer to pick from the list again* (default,
+   recommended) or *Accept the address anyway, without codes* (while your store template has not been updated with the new
+   address block).
 
-The defaults work as they are; two things remain:
+The check panel at the top lists anything still missing, with a button to the place to fix it. The usual one: on **Website
+configuration → Customer tab**, **switch on** the Province / City and Ward fields (and Country if you sell to several countries), and **switch off**
+District — Vietnam dropped the district level on 2025-07-01 (keep it if you also sell to a country that needs it).
 
-1. On the **Customer tab** of the same screen, **switch on** the Province / City and Ward / Commune fields (and the Country
-   field if you sell to several countries). The check panel on the Address tab lists any field still switched off, with a
-   button to the place to fix it.
-2. **Must match the list** (on by default): a Vietnamese address that is not in the list is refused and the customer is
-   asked to choose again. Switched off, such an address is accepted, only without codes. Switch it off if your store's
-   template has not been updated with the new address block yet (the check panel on the Address tab says so).
+![Address lists screen: the Shop setting menu open at Address lists; button Vietnam · Vietnam Address; the check panel says everything is in place; the three steps](./images/address-vn-admin-lists_en.png)
 
-Uninstalling the plugin keeps the settings of the Address tab — reinstall and carry on.
+Uninstalling the plugin keeps the settings of this screen — reinstall and carry on.
 
 ## Updating the list
 
